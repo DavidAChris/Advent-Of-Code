@@ -1,0 +1,10 @@
+read line by line and parse numbers
+
+blank line indicates start of new elf
+
+When you hit a blank line sum all of the parsed numbers and place that number into a "results" array. The index + 1 will be the elf and the value at the index will be its total calories
+
+Once you go over all values get the max value of the results array and the corresponding index of the value. Add 1 to the index and that is the elf holding the most calories
+
+
+
