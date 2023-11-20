@@ -23,15 +23,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 fn priority(first: &str, second: &str) -> i32 {
     let lower_offset = 96;
     let upper_offset = 38;
+    let mut priority = 0;
     for character in first.chars() {
         if second.contains(character) {
             let is_lower = character.is_lowercase();
             if is_lower {
-                return character as i32 - lower_offset;
+                priority = character as i32 - lower_offset;
             } else {
-                return character as i32 - upper_offset;
+                priority = character as i32 - upper_offset;
             }
         }
     }
-    0
+    priority
 }
