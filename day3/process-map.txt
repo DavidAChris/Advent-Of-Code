@@ -1,0 +1,8 @@
+a-z 1-26  {code} - 96
+A-Z 27-52 {code} - 38
+
+Read a line
+Split the "rucksack" into two
+compare each letter in first list until you find like letters
+determine uppercase or lowercase
+minus ascii code by either 96 or 38 and return priority
