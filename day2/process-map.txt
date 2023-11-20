@@ -1,0 +1,23 @@
+Rock (A) - Paper (Y) = 8
+Paper (B) - Rock (X) = 1
+Scissor (C) - Scissor (Z) = 6
+
+if player_one == 'A':
+    score = 8
+elif player_one == 'B':
+    score = 1
+elif player_one == 'C':
+    score = 6
+
+X = 1, Y = 2, Z = 3
+L = 0, Draw = 3, W = 6
+
+AY = 8
+AX = 4
+AZ = 3
+BY = 5
+BX = 1
+BZ = 9
+CY = 2
+CX = 7
+CZ = 6
