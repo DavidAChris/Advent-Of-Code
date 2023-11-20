@@ -7,17 +7,24 @@ use std::{
 struct Choices;
 
 impl Choices {
+    const LOSE: i32 = 0;
+    const DRAW: i32 = 3;
+    const WIN: i32 = 6;
+    const ROCK: i32 = 1;
+    const PAPER: i32 = 2;
+    const SCISSOR: i32 = 3;
+
     fn score(choice: &str) -> i32 {
         match choice {
-            "AY" => 8,
-            "AX" => 4,
-            "AZ" => 3,
-            "BY" => 5,
-            "BX" => 1,
-            "BZ" => 9,
-            "CY" => 2,
-            "CX" => 7,
-            "CZ" => 6,
+            "AY" => Choices::DRAW + Choices::ROCK,
+            "AX" => Choices::LOSE + Choices::SCISSOR,
+            "AZ" => Choices::WIN + Choices::PAPER,
+            "BY" => Choices::DRAW + Choices::PAPER,
+            "BX" => Choices::LOSE + Choices::ROCK,
+            "BZ" => Choices::WIN + Choices::SCISSOR,
+            "CY" => Choices::DRAW + Choices::SCISSOR,
+            "CX" => Choices::LOSE + Choices::PAPER,
+            "CZ" => Choices::WIN + Choices::ROCK,
             _ => 0,
         }
     }
