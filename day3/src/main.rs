@@ -13,14 +13,14 @@ fn main() -> Result<(), Box<dyn Error>> {
         let line = line?;
         let len = line.len() / 2;
         let (first, second) = (&line[..len], &line[len..]);
-        total += compare(first, second);
+        total += priority(first, second);
     }
 
     println!("Total: {}", total);
     Ok(())
 }
 
-fn compare(first: &str, second: &str) -> i32 {
+fn priority(first: &str, second: &str) -> i32 {
     let lower_offset = 96;
     let upper_offset = 38;
     for character in first.chars() {
