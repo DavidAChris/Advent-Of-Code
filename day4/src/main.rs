@@ -31,11 +31,26 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 
 fn duplicate_schedule(first: Vec<i32>, second: Vec<i32>) -> bool {
+    let first = first[0]..=first[1];
+    let second = second[0]..=second[1];
     let mut is_duplicate = false;
-    if first[0].le(&second[0]) && first[1].ge(&second[1])
-        || second[0].le(&first[0]) && second[1].ge(&first[1])
-    {
-        is_duplicate = true;
+    for num in first {
+        if second.contains(&num) {
+            is_duplicate = true;
+            break;
+        }
     }
     is_duplicate
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::duplicate_schedule;
+
+    #[test]
+    fn test_duplicates() {
+        let first = vec![5, 7];
+        let second = vec![7, 9];
+        assert!(duplicate_schedule(first, second))
+    }
 }
